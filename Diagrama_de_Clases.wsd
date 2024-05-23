@@ -1,0 +1,81 @@
+@startuml 
+
+class Cliente {
+    - idcliente : int
+    - nombre : string 
+    - apellido : string
+    - correo : string 
+    - telefono : string
+    - tipo_documento : string
+    + registrareltipodedocumento() : void
+    + sepermitemodificaryeliminarelcliente(): void
+}
+
+
+class Facturacliente {
+  - idfacturacliente: int
+  - fecha : string
+  - idcliente: Cliente
+  - total: float
+  - Servicioid : Servicio
+  - idcliente : Cliente
+  - iddetallefactura : Detallefactura
+  + sepodramodificaryeliminarlafacturahatravezdelid(): void
+}
+
+class Detallefactura {
+    - iddetallefactura : int 
+    - cantidad : int
+    - valorBruto : float
+    - valorNeto : float
+    - valorDescuento : float
+    - valorTotal : float
+    - idproducto : Producto
+    + sepodramodificareliminaryconsultardetallefactura(): void
+}
+
+
+
+class Producto {
+    - idproducto : int
+    - nombre : string 
+    - descripcion : string
+    - categoria : string
+    - valor : float
+    - idregistrarproducto : Registrarproducto
+    + sepodramodificareliminaryconsultarelproductousandoelid(): void
+}
+class Registrarproducto{
+    - idregistrarproducto : int
+    - nombre : string
+    - valor : float
+}
+
+class Iventario {
+    - idiventario : int
+    - stock : string 
+    - fechaingreso : string
+    - valordescuento : float
+    - porcentajeIVA : float
+    - idregistrarinventario : Registrariventario
+    + sepodramodificareliminaryconsultarelinventariousandoelid(): void
+}
+
+class Registrariventario{
+    - idregistrarinventario : int
+    - fechaingreso : string
+    - valordescuento : float
+    - porcentajeIVA : float
+
+}
+
+Cliente --* Facturacliente
+Facturacliente -- Detallefactura
+Detallefactura -- Producto
+Producto -- Registrarproducto
+Producto -- Iventario
+Iventario -- Registrariventario
+
+
+@enduml
+
