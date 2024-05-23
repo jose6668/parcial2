@@ -3,7 +3,7 @@ left to right direction
 actor Cliente as clien
 
 
-rectangle "tienda" {
+rectangle "sistema" {
     usecase "factura Cliente" as Facturacleinte
     usecase "deatlle factura" as Dettalefactura
     usecase "producto" as Producto
