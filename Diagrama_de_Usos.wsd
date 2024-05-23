@@ -16,9 +16,16 @@ rectangle "sistema" {
 clien --> Facturacleinte
 clien --> Dettalefactura
 clien --> Producto
-Producto --> Ingresarproducto
+clien --> Ingresarproducto
 clien --> Inventario
-Inventario --> Ingresarinventario
+clien --> Ingresarinventario
+
+System --> Facturacleinte
+System --> Dettalefactura
+System --> Producto
+System --> Ingresarproducto
+System --> Inventario
+System --> Ingresarinventario
 
 
 
